@@ -1,0 +1,72 @@
+
+.navbar {
+  background: #fff;
+  padding: 15px 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+/* Brand */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.navbar-brand small {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+/* Links */
+.nav-link {
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.nav-link:hover {
+  color: #0d6efd !important;
+}
+
+/* Social icons */
+.social-icons a {
+  color: #333;
+  margin-left: 12px;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0d6efd;
+}
+
+/* Navbar toggler */
+.navbar-light .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Logout button styling */
+.logout-btn {
+    background-color: #fff;       /* White background */
+    color: #333;                  /* Dark text */
+    border: 1px solid #333;       /* Border */
+    border-radius: 5px;           /* Rounded corners */
+    padding: 6px 12px;            /* Padding */
+    font-size: 14px;              /* Text size */
+    font-weight: 500;
+    cursor: pointer;              /* Pointer on hover */
+    transition: all 0.3s ease;   /* Smooth hover effect */
+}
+
+/* Hover effect */
+.logout-btn:hover {
+    background-color: #333;       /* Dark background on hover */
+    color: #fff;                  /* White text on hover */
+    border-color: #333;
+}
+
+/* Optional: position at top right */
+.navbar .logout-btn {
+    margin-left: auto;            /* Push it to the right */
+}
