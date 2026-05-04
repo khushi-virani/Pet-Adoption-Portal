@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# 🐾 Pet Adoption Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application that connects pets with loving homes. Built with **React JS** (frontend) and **PHP** (backend), powered by a **MySQL** database.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Features
 
-### `npm start`
+### 👤 User
+- Register & Login
+- Browse pets by category (Dogs, Cats, Bunnies)
+- View pet details (breed, age, description)
+- Submit adoption requests
+- View adoption request status (Accepted / Rejected)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🛠️ Admin
+- Secure admin login
+- Manage all pets (Add / Edit / Delete)
+- View all adoption requests
+- Accept or Reject adoption requests
+- Manage pet categories
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Layer      | Technology        |
+|------------|-------------------|
+| Frontend   | React JS          |
+| Backend    | PHP               |
+| Database   | MySQL (MariaDB)   |
+| Server     | XAMPP (Apache)    |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🗄️ Database Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Database name: `petdb`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Table                  | Description                          |
+|------------------------|--------------------------------------|
+| `tbllogin`             | Stores admin and user credentials    |
+| `tblcategory`          | Pet categories (Dog, Cat, Bunny)     |
+| `tblpets`              | Pet listings with details & images   |
+| `tbladoption_requests` | Adoption requests with status        |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ⚙️ Setup & Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
+- [XAMPP](https://www.apachefriends.org/) (Apache + MySQL)
+- [Node.js](https://nodejs.org/) & npm
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Steps
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**1. Clone the repository**
+```bash
+git clone https://github.com/khushi-virani/Pet-Adoption-Portal.git
+cd Pet-Adoption-Portal
+```
 
-## Learn More
+**2. Set up the database**
+- Open **phpMyAdmin** → `http://localhost/phpmyadmin`
+- Create a new database named `petdb`
+- Click **Import** → select the file `petdb.sql` → click **Go**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**3. Configure PHP backend**
+- Copy the project folder to `C:/xampp/htdocs/`
+- Update your DB connection in the PHP config file:
+```php
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "petdb";
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**4. Start the React frontend**
+```bash
+cd frontend   # or wherever your React code is
+npm install
+npm start
+```
 
-### Code Splitting
+**5. Start XAMPP**
+- Open XAMPP Control Panel
+- Start **Apache** and **MySQL**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**6. Open the app**
+- Frontend: `http://localhost:3000`
+- Backend API: `http://localhost/Pet-Adoption-Portal/`
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔐 Default Login Credentials
 
-### Making a Progressive Web App
+### Admin
+| Username | Password |
+|----------|----------|
+| admin    | admin123 |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Sample Users
+| Username | Password  |
+|----------|-----------|
+| axita    | axita123  |
+| hetvi    | hetvi123  |
 
-### Advanced Configuration
+> ⚠️ Change passwords after setup for security.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+Pet-Adoption-Portal/
+│
+├── frontend/          # React JS frontend
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── App.js
+│   └── package.json
+│
+├── backend/           # PHP API files
+│   ├── config.php
+│   ├── login.php
+│   ├── pets.php
+│   └── adoption.php
+│
+├── image/             # Pet images
+├── petdb.sql          # Database dump
+└── README.md
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🙋‍♀️ Author
+
+**Khushi Virani**  
+📧 viranikhushi53@gmail.com  
+🔗 www.linkedin.com/in/khushi-virani
+
+---
+
+## 📄 License
+
+This project is for educational purposes.
